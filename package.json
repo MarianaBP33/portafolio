@@ -1,14 +1,14 @@
 {
   "name": "portafolio",
   "version": "0.0.0",
+  "homepage": "https://marianabp33.github.io/portafolio/",
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
-    "build:digitalocean": "npm install --include=dev && npm run build && npm ci"
+    "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
   },
   "dependencies": {
     "vue": "^3.3.4",
