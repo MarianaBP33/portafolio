@@ -9,7 +9,7 @@ import SupportIcon from './icons/IconSupport.vue'
   <WelcomeItem>
     <template #heading>Welcome to my website!</template>
     <template #subheading>My name is ...</template>
-    <template #name>Mariana Bojórquez Pérez</template>
+    <template #name>Mariana Bojórquez poop</template>
     <template #desc>
       Software Developer at <a href="https://www.epam.com/about" style="color: black;">EPAM Systems Mexico</a></template>
   </WelcomeItem>
