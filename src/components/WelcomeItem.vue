@@ -1,4 +1,5 @@
 <template>
+  <section id="home">
   <div class="container">
     <div class="welcome">
       <h3>
@@ -21,7 +22,22 @@
       </div>
       <img src="../assets/photos/mifoto.jpg"  class="circle-image"/>
     </div>
+    <div class="links">
+        <h5>
+          <a href="#about-me" style="color:white; font-weight: 500;"><slot name="link1"></slot></a>
+            <i class="fa fa-arrow-right" style="margin-left: .5rem;"></i>
+        </h5>
+        <h5>
+          <slot name="link2"></slot>
+          <i class="fa fa-arrow-right" style="margin-left: .5rem;"></i>
+        </h5>
+        <h5>
+          <a href="https://maps.app.goo.gl/fcn3eAxXQa9XTHpN6" style="color:white; font-weight: 500;"><slot name="link3"></slot></a>
+          <i class="fa fa-location-arrow" style="margin-left: .5rem;"></i>
+        </h5>
+    </div>
   </div>
+  </section>
 </template>
 
 <style scoped>
@@ -35,6 +51,12 @@
 .content{
   display: flex;
   align-items: center;
+}
+
+.links{
+  display: flex;
+  justify-content: center;
+  
 }
 .item {
   margin-top: 0rem;
@@ -60,6 +82,13 @@ h2 {
   font-weight: 500;
   margin-bottom: 0.4rem;
   color: var(--color-heading);
+}
+h5{
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-top: 1rem;
+  padding: 2rem;
 }
 .welcome{
   display: flex;

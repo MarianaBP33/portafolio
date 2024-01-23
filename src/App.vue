@@ -1,11 +1,16 @@
-<script setup lang="ts">
-import {  RouterView } from 'vue-router'
-import type HomeViewVue from './views/HomeView.vue';
-</script>
-
 <template>
-  <RouterView /> 
+  <TheWelcomeVue />
 </template>
 
 <style scoped>
 </style>
+
+<script lang="ts">
+import TheWelcomeVue from '@/components/TheWelcome.vue';
+export default {
+  name: 'App',
+  components: {
+    TheWelcomeVue
+  }
+}
+</script>

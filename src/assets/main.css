@@ -7,6 +7,13 @@
 
   font-weight: normal;
 }
+#tsparticles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* This ensures the particles are behind your content */
+}
 
 a,
 .green {
