@@ -15,7 +15,7 @@
               </h4>
             </div>
             <div class="carousel-section">
-                <img src="../assets/photos/mifoto.jpg" alt="Image 2">
+                <img src="../assets/photos/micara.jpg" alt="Image 2">
             </div>
           </div>
         </div>
@@ -42,8 +42,8 @@
 }
 
 img{
-    width: 100px;
-    height: 100px;
+    width: 230px;
+    height: 300px;
 }
 
 .info{
