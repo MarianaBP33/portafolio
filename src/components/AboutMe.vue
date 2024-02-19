@@ -5,15 +5,19 @@
                 <slot name="heading"></slot>
             </h1>
             <div class="info">
-            <div>
-                <h4>
-                    <slot name="text"></slot>
-                </h4>
+            <div class="text-section">
+              <h4>
+                <slot name="text"></slot>
+                <br>
+                <br>
+                <slot name="Moretext"></slot><br><br>
+                <slot name="Moretext2"></slot>
+              </h4>
             </div>
-            <div>
-                <h3>text</h3>
+            <div class="carousel-section">
+                <img src="../assets/photos/mifoto.jpg" alt="Image 2">
             </div>
-            </div>
+          </div>
         </div>
     </section>
 </template>
@@ -24,24 +28,44 @@
     align-items: center;
     flex-direction: column;
     position: relative;
-    margin-top: 3rem;
+    height: 70vh;
     margin-bottom: 3rem;
+}
+.carousel-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-section{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    width: 100px;
+    height: 100px;
 }
 
 .info{
-  display: flex;
-  justify-content: center;
-  
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.text-section, .carousel-section {
+  width: 55%; /* Adjust this value as needed */
 }
 h1{
     font-size: 2rem;
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
     color: var(--color-heading);
 }
 
 h4{
     font-size: 1.2rem;
+    color: white;
 }
 </style>
-```
+
