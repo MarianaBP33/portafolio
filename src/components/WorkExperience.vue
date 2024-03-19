@@ -136,7 +136,7 @@ export default defineComponent({
                 }
             ] as WorkExperience[],
             tools: [
-                'Java', 'Spring Security','Spring Boot', 'AWS DynamoDB','AWS RDS','AWS EC2','AWS S3',"Docker","Git", "VS Code",'MySQL','MongoDB','Vuejs', 'Typescript', 'Javascript', 'HTML & CSS', 'Mockito','JUnit','Microsoft Excel', 'VBA'
+                'Java', 'Spring Security','Spring Boot', 'AWS DynamoDB','AWS RDS','AWS EC2','AWS S3',"Docker","Git", "VS Code",'MySQL','MongoDB','Vuejs', 'Typescript', 'Javascript', 'HTML & CSS', 'Mockito','JUnit','Microsoft Excel'
             ]
         }
     }
