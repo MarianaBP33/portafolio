@@ -10,21 +10,22 @@ import WelcomeItem from './WelcomeItem.vue'
   <WelcomeItem>
     <template #name>Mariana Bojórquez Pérez</template>
     <template #desc>
-      Software Developer at <a href="https://www.epam.com/about" style="color: lightblue;">EPAM Systems Mexico</a></template>
+      Software Developer at <a href="https://www.oracle.com/latam/" style="color: lightsteelblue;">Oralce Mexico</a></template>
     <template #link1>About Me</template>
     <template #link2>Work Experience</template>
-    <template #link3>El Marqués, Querétaro</template>
+    <template #link3>Guadalajara, Jalisco</template>
   </WelcomeItem>
   <WorkExperience>
     <template #heading>Work Experience</template>
-     <template #text>Kelloggs</template>
-      <template #Moretext>GEIQ</template>
+     <template #experience>Kelloggs</template>
+      <template #experience1>GEIQ</template>
+      <template #experience2>EPAM</template>
   </WorkExperience>
   <AboutMe>
     <template #heading>About Me</template>
-    <template #text>I have almost <span style="font-weight: bold;">two</span> years of experience in the IT industry, specializing mainly on <span style="font-weight: bold;">web development in Java.</span> </template>
-    <template #Moretext>Some of my achievements include obtaining my<span style="font-weight: bold;"> Bachelor's degree in Informatics Engineering and Digital Business.</span> Also, in 2024 I got certified as <span style="font-weight: bold;">AWS Cloud Practitioner by AWS services.</span></template>
-    <template #Moretext2> As a university student, I was one of the 40 Mexican students selected to participate in the<span style="font-weight: bold;"> Huawei Seeds for the Future 2021 program.</span></template>
+    <template #text>I'm a backend-focused software engineer with nearly <span style="font-weight: bold;">3</span>  years of experience building and maintaining web applications, primarily in <span style="font-weight: bold;">Java. </span></template>
+    <template #Moretext>I've worked across the full stack, from backend APIs and cloud-based services to frontend development using modern frameworks, and I enjoy taking ideas from design to production.</template>
+    <template #Moretext2> I hold a <span style="font-weight: bold;"> Bachelor's degree in Informatics Engineering and Digital Business.</span> I am AWS Cloud Practitioner certified, and was selected as one of 40 students nationwide to participate in <span style="font-weight: bold;"> Huawei Seeds for the Future 2021 program.</span></template>
   </AboutMe>
   </div>
   <FooterComponent>

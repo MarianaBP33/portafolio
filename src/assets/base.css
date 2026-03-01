@@ -30,8 +30,9 @@
   --color-border: var(--vt-c-divider-light-2);
   --color-border-hover: var(--vt-c-divider-light-1);
 
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
+  /* use light text on dark backgrounds for better contrast */
+  --color-heading: #ffffff;
+  --color-text: #ffffff;
 
   --section-gap: 160px;
 }
@@ -61,7 +62,7 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: black;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -83,4 +84,54 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive typography scale */
+:root {
+  --font-size-base: 15px;
+  --font-size-h1: 3rem;
+  --font-size-h2: 1.8rem;
+  --font-size-h3: 1.4rem;
+  --font-size-lead: 1.2rem;
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+h4, h5, p { font-size: var(--font-size-lead); }
+
+/* Smaller devices: reduce sizes and spacing */
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 13px;
+    --font-size-h1: 2.2rem;
+    --font-size-h2: 1.4rem;
+    --font-size-h3: 1.1rem;
+    --font-size-lead: 1rem;
+  }
+
+  body {
+    font-size: var(--font-size-base);
+  }
+
+  /* tighten section gap for narrow screens */
+  :root { --section-gap: 80px; }
+
+  /* reduce large card paddings/shadows that may overflow */
+  .container, .work-experience-component {
+    padding: 1rem !important;
+    border-radius: 12px !important;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 420px) {
+  :root {
+    --font-size-base: 12px;
+    --font-size-h1: 2rem;
+    --font-size-h2: 1.2rem;
+    --font-size-h3: 1rem;
+    --font-size-lead: 0.95rem;
+  }
+  h1 { line-height: 1.05; }
 }
