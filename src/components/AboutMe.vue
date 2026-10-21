@@ -13,7 +13,7 @@
                     </h4>
                 </div>
                 <div class="carousel-section">
-                    <img src="../assets/photos/micara-600.jpg" alt="About me">
+                    <img src="../assets/photos/micara.jpg" alt="About me">
                 </div>
             </div>
         </div>

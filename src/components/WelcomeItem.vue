@@ -7,7 +7,7 @@
         </h3>
       </div>
       <div class="content">
-        <img src="../assets/photos/mifoto-400.jpg" alt="Mariana Bojórquez Pérez" class="circle-image"/>
+        <img src="../assets/photos/mifoto.jpg" alt="Mariana Bojórquez Pérez" class="circle-image"/>
         <div class="item">
           <h4>
             <slot name="subheading"></slot>
