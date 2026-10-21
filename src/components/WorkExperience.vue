@@ -16,7 +16,6 @@
                             </li>
                         </ul>
                         <div class ="tags">
-                            <slot name="item1"></slot>
                             <span class="tag" v-for="tool in tools" :key="tool" >{{ tool }}</span>
                         </div>
                     </div>
@@ -28,7 +27,7 @@
 /* modern card for work experience */
 .content {
   margin-top: 2rem;
-  height: 60vh;
+  min-height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +42,6 @@
   margin-top: 4rem;
 }
 .tags{
-    width: 80;
     margin-left: 2rem;
 
 }
@@ -84,8 +82,7 @@
 }
 
 .custom-bullet li {
-  background: url('') no-repeat left center; /* Add your image as the bullet point */
-  padding-left: 40px; /* Add padding to the left of the text to make room for the image */
+  padding-left: 40px;
 }
 
 img {
@@ -162,52 +159,42 @@ h4 {
   .custom-bullet li { padding-left: 20px; }
 }
 </style>
-<script lang="ts">
-import { defineComponent } from 'vue';
-
+<script setup lang="ts">
 interface WorkExperience {
     position: string;
     startDate: string;
     endDate: string;
     description: string;
-    tools: Array<string>;
 }
 
-export default defineComponent({
-    data() {
-        return {
-            workExperiences: [
-                {
-                    position: 'Software Developer at Oracle Mexico',
-                    startDate: 'October 2024',
-                    endDate: 'Present',
-                    description: 'Backend Engineer for Cloud services, specializing in test automation and QA engineering.',
-                },
-                 {
-                    position: 'Software Engineer at EPAM Systems Mexico',
-                    startDate: 'September 2023',
-                    endDate: 'October 2024',
-                    description: 'Designed and developed RESTful APIs using Spring Boot. Utilized AWS services to deploy and manage cloud-based microservices.',
-                },
-                {
-                    position: 'Software Developer Intern at GE Aerospace',
-                    startDate: 'September 2022',
-                    endDate: 'July 2023',
-                    description: 'Full-stack developer; implemented feature enhancements that improved system performance and user experience.',
+const workExperiences: WorkExperience[] = [
+    {
+        position: 'Software Developer at Oracle Mexico',
+        startDate: 'October 2024',
+        endDate: 'Present',
+        description: 'Backend Engineer for Cloud services, specializing in test automation and QA engineering.',
+    },
+    {
+        position: 'Software Engineer at EPAM Systems Mexico',
+        startDate: 'September 2023',
+        endDate: 'October 2024',
+        description: 'Designed and developed RESTful APIs using Spring Boot. Utilized AWS services to deploy and manage cloud-based microservices.',
+    },
+    {
+        position: 'Software Developer Intern at GE Aerospace',
+        startDate: 'September 2022',
+        endDate: 'July 2023',
+        description: 'Full-stack developer; implemented feature enhancements that improved system performance and user experience.',
+    },
+    {
+        position: "Talent & Change Management Intern at Kellogg's Company",
+        startDate: 'August 2021',
+        endDate: 'January 2022',
+        description: 'Developed and automated Excel macros, reducing data processing time and improving reporting efficiency.',
+    },
+]
 
-                },
-                {
-                    position: 'Talent & Change Management Intern at Kelloggs Company',
-                    startDate: 'August 2021',
-                    endDate: 'January 2022',
-                    description: 'Developed and automated Excel macros, reducing data processing time and improving reporting efficiency.',
-                }
-            ] as WorkExperience[],
-            tools: [
-                'Java', 'Python', 'Go','AWS',"Docker",'Spring Boot','Spring Security', 'Typescript', 'Javascript', 'Terraform','Git','MySQL','MongoDB', 'CI/CD','Vuejs', 'HTML & CSS', 'Mockito','JUnit','Microsoft Excel'
-            ]
-        }
-    }
-});
-    
+const tools = [
+    'Java', 'Python', 'Go', 'AWS', 'Docker', 'Spring Boot', 'Spring Security', 'Typescript', 'Javascript', 'Terraform', 'Git', 'MySQL', 'MongoDB', 'CI/CD', 'Vuejs', 'HTML & CSS', 'Mockito', 'JUnit', 'Microsoft Excel'
+]
 </script>

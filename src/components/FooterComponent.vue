@@ -1,7 +1,7 @@
 <template>
   <footer class="container">
     <div class="links">
-      <a href="mailto:mariana.bp.33@gmailcom" aria-label="Email"><img src="../assets/gmail.png" alt="gmail" class="logo" /></a>
+      <a href="mailto:mariana.bp.33@gmail.com" aria-label="Email"><img src="../assets/gmail.png" alt="gmail" class="logo" /></a>
       <a href="https://github.com/MarianaBP33" aria-label="GitHub" target="_blank" rel="noopener"><img src="../assets/github.png" alt="github" class="logo" /></a>
       <a href="https://www.linkedin.com/in/mariana-bojorquez-perez-5556a11b8/" aria-label="LinkedIn" target="_blank" rel="noopener"><img src="../assets/linkedin.png" alt="linkedin" class="logo"/></a>
     </div>

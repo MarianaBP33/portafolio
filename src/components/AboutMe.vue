@@ -13,7 +13,7 @@
                     </h4>
                 </div>
                 <div class="carousel-section">
-                    <img src="../assets/photos/micara.jpg" alt="About me">
+                    <img src="../assets/photos/micara-600.jpg" alt="About me">
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
     align-items: center;
     flex-direction: column;
     position: relative;
-    height: 90vh;
+    min-height: 90vh;
     margin-bottom: 3rem;
 }
 .carousel-section{

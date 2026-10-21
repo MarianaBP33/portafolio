@@ -7,7 +7,7 @@
         </h3>
       </div>
       <div class="content">
-        <img src="../assets/photos/mifoto.jpg"  class="circle-image"/>
+        <img src="../assets/photos/mifoto-400.jpg" alt="Mariana Bojórquez Pérez" class="circle-image"/>
         <div class="item">
           <h4>
             <slot name="subheading"></slot>
@@ -30,8 +30,8 @@
           <a class="hero-link" href="#about-me"><slot name="link1"></slot></a>
         </h5>
         <h5>
-          <a class="hero-link" href="https://maps.app.goo.gl/fEWCo527CSHqAn1E9" target="_blank"><slot name="link3"></slot></a>
-          <i class="fa fa-location-arrow" style="margin-left: .5rem;"></i>
+          <a class="hero-link" href="https://maps.app.goo.gl/fEWCo527CSHqAn1E9" target="_blank" rel="noopener"><slot name="link3"></slot></a>
+          <svg class="location-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 3 3 10.53v.98l6.84 2.65L12.48 21h.98L21 3z"/></svg>
         </h5>
       </div>
     </div>
@@ -100,6 +100,12 @@
   border-radius: 6px;
 }
 .hero-link:hover{ background: rgba(255,255,255,0.05); }
+.location-icon{
+  width: 1em;
+  height: 1em;
+  margin-left: .5rem;
+  vertical-align: middle;
+}
 
 @media (max-width: 768px) {
   .links { gap: 0.4rem; }
