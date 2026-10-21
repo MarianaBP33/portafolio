@@ -1,54 +1,55 @@
+<script setup lang="ts">
+import { profile } from '@/data/profile'
+</script>
+
 <template>
-  <footer class="container">
-    <div class="links">
-      <a href="mailto:mariana.bp.33@gmail.com" aria-label="Email"><img src="../assets/gmail.png" alt="gmail" class="logo" /></a>
-      <a href="https://github.com/MarianaBP33" aria-label="GitHub" target="_blank" rel="noopener"><img src="../assets/github.png" alt="github" class="logo" /></a>
-      <a href="https://www.linkedin.com/in/mariana-bojorquez-perez-5556a11b8/" aria-label="LinkedIn" target="_blank" rel="noopener"><img src="../assets/linkedin.png" alt="linkedin" class="logo"/></a>
-    </div>
-    <p class="credits">© 2026 Mariana Bojórquez Pérez</p>
+  <footer id="contact" class="section contact">
+    <h2 class="section-cmd">
+      <span aria-hidden="true">contact --list</span>
+      <span class="sr-only">Contact</span>
+    </h2>
+    <dl class="links">
+      <dt>email</dt>
+      <dd><a :href="`mailto:${profile.email}`">{{ profile.email }}</a></dd>
+      <dt>github</dt>
+      <dd><a :href="profile.github" target="_blank" rel="noopener">github.com/MarianaBP33</a></dd>
+      <dt>linkedin</dt>
+      <dd><a :href="profile.linkedin" target="_blank" rel="noopener">linkedin.com/in/mariana-bojorquez-perez</a></dd>
+    </dl>
+    <p class="credits">© {{ new Date().getFullYear() }} {{ profile.fullName }}</p>
   </footer>
 </template>
+
 <style scoped>
-.container {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 0.5rem 0; /* reduced height */
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(8px);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem; /* smaller gap between icon row and credits */
-  z-index: 1000;
+.contact {
+  padding-bottom: 56px;
 }
-
 .links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+  padding-top: 18px;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 10px 22px;
+  font-size: 14px;
 }
-
-.logo{
-    width: 30px;
-    height: 30px;
-    transition: transform 0.2s, opacity 0.2s;
+dt {
+  color: var(--dim);
 }
-
-.logo:hover {
-    transform: scale(1.1);
-    opacity: 0.8;
+dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
-
+dd a {
+  color: var(--teal);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+dd a:hover {
+  border-color: var(--teal);
+}
 .credits {
-  color: #ccc;
-  font-size: 0.8rem;
-}
-
-@media (min-width: 768px) {
-  .logo { width: 60px; height: 60px; }
-  .credits { font-size: 0.9rem; }
+  margin-top: 40px;
+  font-size: 12px;
+  color: var(--dim);
 }
 </style>

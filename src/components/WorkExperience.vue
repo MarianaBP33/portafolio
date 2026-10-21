@@ -1,159 +1,96 @@
-<template>
-    <section id="work-ex">
-        <div class="content">
-            <div class="heading">
-                <h2>
-                    <slot name="heading"></slot>
-                </h2>
-            </div>
-            <div class="info">
-                <div class="work-experience-component">
-                        <ul class="custom-bullet">
-                        <li  v-for="(item, index) in workExperiences" :key="index" class="list-element">
-                            <p class="date">{{ item.startDate }} - {{ item.endDate }}</p>
-                            <h3 class="position">{{ item.position }}</h3>
-                            <p class="description">{{ item.description }}</p>
-                            </li>
-                        </ul>
-                        <div class ="tags">
-                            <span class="tag" v-for="tool in tools" :key="tool" >{{ tool }}</span>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </section>
-</template>
-<style scoped>
-/* modern card for work experience */
-.content {
-  margin-top: 2rem;
-  min-height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.work-experience-component {
-  background: rgba(255,255,255,0.1);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-  max-width: 800px;
-  width: 100%;
-  margin-top: 4rem;
-}
-.tags{
-    margin-left: 2rem;
-
-}
-.tag {
-  background-color: #55555555;
-  color: #fff;
-  border-radius: 5px;
-  padding: 5px 10px; 
-  margin-left: 10px;
-  font-size: 0.8em; 
-  min-width: 50px;
-  display: inline-block; 
-  overflow: hidden;
-  text-overflow: ellipsis; 
-  white-space: nowrap; 
-}
-.description {
-    font-size: .9rem;
-    color: #fff;
-    margin-bottom: 0.5rem;
-}
-.date{
-    font: .8rem sans-serif;
-    color: #ddd;
-}
-.list-element {
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-}
-.position {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #fff;
-}
-.custom-bullet {
-  list-style: none; /* Remove default bullet points */
-  padding-left: 0; /* Remove default padding */
-}
-
-.custom-bullet li {
-  padding-left: 40px;
-}
-
-.info {
-   display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: center;
-    
-}
-
-.heading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-h2 {
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: #fff;
-}
-
-@media (max-width: 768px) {
-  .content {
-    height: auto;
-    padding: 1rem 0.5rem;
-    display: flex;
-    flex-direction: column; /* stack title and block */
-    align-items: stretch;
-  }
-
-  /* ensure the title sits on top */
-  .content > div:first-child {
-    display: block;
-    text-align: left;
-    padding-left: 0.5rem;
-  }
-
-  .info {
-    display: flex;
-    flex-direction: column; /* make the experience a block under the title */
-    align-items: stretch;
-    width: 100%;
-  }
-
-  .work-experience-component {
-    padding: 1rem;
-    box-shadow: none;
-    width: 100%;
-    max-width: none;
-    margin-top: 0.75rem;
-  }
-
-  .position {
-    font-size: 1rem;
-  }
-  .description {
-    font-size: 0.95rem;
-  }
-  .date {
-    font-size: 0.85rem;
-  }
-  .tags{
-    width: 100%;
-    margin-left: 0;
-    margin-top: 0.5rem;
-  }
-  .custom-bullet li { padding-left: 20px; }
-}
-</style>
 <script setup lang="ts">
 import { tools, workExperiences } from '@/data/profile'
 </script>
+
+<template>
+  <section id="experience" class="section">
+    <h2 class="section-cmd">
+      <span aria-hidden="true">git log --career --oneline</span>
+      <span class="sr-only">Work experience</span>
+    </h2>
+    <ol class="log">
+      <li v-for="(job, index) in workExperiences" :key="job.company" class="entry">
+        <p class="when">
+          <b v-if="index === 0">HEAD</b>
+          {{ job.startDate }} → {{ job.endDate }}
+        </p>
+        <div>
+          <h3>{{ job.role }} <span class="at">@</span> {{ job.company }}</h3>
+          <p class="description">{{ job.description }}</p>
+          <p class="stack"><span class="label">stack:</span> {{ job.stack.join(' ') }}</p>
+        </div>
+      </li>
+    </ol>
+
+    <h2 class="section-cmd skills-cmd">
+      <span aria-hidden="true">ls ~/skills</span>
+      <span class="sr-only">Skills</span>
+    </h2>
+    <ul class="skills">
+      <li v-for="tool in tools" :key="tool">{{ tool }}</li>
+    </ul>
+  </section>
+</template>
+
+<style scoped>
+.log {
+  list-style: none;
+  padding: 0;
+}
+.entry {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.when {
+  font-size: 12px;
+  color: var(--soft);
+}
+.when b {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--teal);
+  font-weight: 600;
+}
+h3 {
+  font-size: 15px;
+  font-weight: 600;
+}
+.at {
+  color: var(--dim);
+}
+.description {
+  margin: 6px 0 10px;
+  font-family: var(--font-text);
+  font-size: 15px;
+  color: var(--soft);
+  max-width: 70ch;
+}
+.label {
+  color: var(--dim);
+}
+
+.skills-cmd {
+  margin-top: 40px;
+}
+.skills {
+  list-style: none;
+  padding: 18px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-size: 13px;
+}
+.skills li {
+  color: var(--ink);
+}
+
+@media (max-width: 720px) {
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+</style>
