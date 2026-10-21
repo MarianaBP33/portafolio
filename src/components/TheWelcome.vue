@@ -13,7 +13,7 @@ const yearsOfExperience = Math.floor((Date.now() - careerStart.getTime()) / (365
   <WelcomeItem>
     <template #name>Mariana Bojórquez Pérez</template>
     <template #desc>
-      Software Developer at <a href="https://www.oracle.com/latam/" class="company-link">Oracle Mexico</a></template>
+      Senior Software Engineer at <a href="https://www.virtusa.com/" class="company-link">Virtusa</a></template>
     <template #link1>About Me</template>
     <template #link2>Work Experience</template>
     <template #link3>Guadalajara, Jalisco</template>

@@ -10,22 +10,28 @@ export const careerStart = new Date(2023, 8, 1)
 
 export const workExperiences: WorkExperience[] = [
   {
-    position: 'Software Developer at Oracle Mexico',
-    startDate: 'October 2024',
+    position: 'Senior Software Engineer at Virtusa',
+    startDate: 'June 2026',
     endDate: 'Present',
-    description: 'Backend Engineer for Cloud services, specializing in test automation and QA engineering.',
+    description: 'Contractor on a project for Google, working on large-scale backend modernization and services migration. Develop and review Java and Kotlin code to migrate legacy services onto a modern platform.',
   },
   {
-    position: 'Software Engineer at EPAM Systems Mexico',
+    position: 'Software Engineer at Oracle Mexico',
+    startDate: 'October 2024',
+    endDate: 'March 2026',
+    description: 'Led testing strategy and automation for critical OCI services. Designed automation frameworks in Java, Python, Bash and Go, and led integration, regression and performance testing across distributed cloud services and RESTful APIs.',
+  },
+  {
+    position: 'Junior Software Engineer at EPAM Systems Mexico',
     startDate: 'September 2023',
-    endDate: 'October 2024',
-    description: 'Designed and developed RESTful APIs using Spring Boot. Utilized AWS services to deploy and manage cloud-based microservices.',
+    endDate: 'September 2024',
+    description: 'Built RESTful APIs with Java (Spring Boot, Hibernate) and Node.js (Express, TypeScript) for microservices-based systems, developed React and TypeScript interfaces, and deployed applications on AWS (EC2, S3, Lambda).',
   },
   {
-    position: 'Software Developer Intern at GE Aerospace',
+    position: 'Software Developer at GE Aerospace',
     startDate: 'September 2022',
-    endDate: 'July 2023',
-    description: 'Full-stack developer; implemented feature enhancements that improved system performance and user experience.',
+    endDate: 'August 2023',
+    description: 'Developed full-stack features with Java (Spring Boot, Hibernate) and Vue.js, owning key features end-to-end from design to deployment, and built cloud-based applications on AWS.',
   },
   {
     position: "Talent & Change Management Intern at Kellogg's Company",
