@@ -19,7 +19,7 @@ export const profile = {
   fullName: 'Mariana Bojórquez Pérez',
   role: 'Senior Software Engineer',
   company: 'Virtusa (for Google)',
-  stack: ['java', 'kotlin', 'go', 'python', 'aws', 'oci'],
+  stack: ['java', 'kotlin', 'docker', 'python', 'aws', 'qa'],
   location: 'Guadalajara, MX',
   locationUrl: 'https://maps.app.goo.gl/fEWCo527CSHqAn1E9',
   email: 'mariana.bp.33@gmail.com',
