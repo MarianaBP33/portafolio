@@ -1,97 +1,73 @@
+<script setup lang="ts">
+import { careerStart } from '@/data/profile'
+
+const yearsOfExperience = Math.floor((Date.now() - careerStart.getTime()) / (365.25 * 24 * 60 * 60 * 1000))
+</script>
+
 <template>
-    <section id="about-me">
-        <div class="content">
-            <h2>
-                <slot name="heading"></slot>
-            </h2>
-            <div class="info">
-                <div class="text-section">
-                    <div class="bio">
-                        <p><slot name="text"></slot></p>
-                        <p><slot name="Moretext"></slot></p>
-                        <p><slot name="Moretext2"></slot></p>
-                    </div>
-                </div>
-                <div class="carousel-section">
-                    <img src="../assets/photos/micara.jpg" alt="Mariana Bojórquez Pérez">
-                </div>
-            </div>
-        </div>
-    </section>
+  <section id="about" class="section">
+    <h2 class="section-cmd">
+      <span aria-hidden="true">cat about.md</span>
+      <span class="sr-only">About me</span>
+    </h2>
+    <div class="about">
+      <div class="text">
+        <p>
+          I'm a backend-focused software engineer with over <strong>{{ yearsOfExperience }} years</strong> of experience
+          building and maintaining web applications, primarily in <strong>Java</strong>.
+        </p>
+        <p>
+          I've worked across the full stack, from backend APIs and cloud-based services to frontend development using
+          modern frameworks, and I enjoy taking ideas from design to production.
+        </p>
+        <p>
+          I hold a <strong>Bachelor's degree in Informatics Engineering and Digital Business</strong>. I am AWS Cloud
+          Practitioner certified, and was selected as one of 40 students nationwide to participate in
+          <strong>Huawei Seeds for the Future 2021</strong>.
+        </p>
+      </div>
+      <img src="../assets/photos/micara.jpg" alt="Mariana Bojórquez Pérez" width="600" height="800" loading="lazy" />
+    </div>
+  </section>
 </template>
+
 <style scoped>
-.content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    min-height: 90vh;
-    margin-bottom: 3rem;
+.about {
+  padding-top: 22px;
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 40px;
+  align-items: start;
 }
-.carousel-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.text {
+  display: grid;
+  gap: 14px;
+  font-family: var(--font-text);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--soft);
+  max-width: 64ch;
 }
-.text-section{
-    display: flex;
-    justify-content: center;
+strong {
+  color: var(--ink);
+  font-weight: 500;
 }
-
-img{
-    width: 280px;
-    height: auto;
-    max-height: 350px;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-    object-fit: cover;
-}
-
-.info{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-.text-section, .carousel-section {
-  width: 55%; /* Adjust this value as needed */
-}
-h2{
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    color: #fff;
+img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  padding: 6px;
+  background: var(--panel);
 }
 
-@media (max-width: 768px) {
-  .info {
-    flex-direction: column;
-    align-items: center;
-  }
-  .text-section, .carousel-section {
-    width: 100%;
-  }
-  .carousel-section {
-    margin-top: 1rem;
+@media (max-width: 720px) {
+  .about {
+    grid-template-columns: 1fr;
   }
   img {
-    width: 200px;
-    max-height: none;
-    margin-top: 0.5rem;
+    max-width: 220px;
   }
-  h2 {
-    font-size: 1.75rem;
-  }
-  .bio p {
-    font-size: 1rem;
-  }
-}
-
-.bio p{
-    font-size: 1.2rem;
-    color: #fff;
 }
 </style>
-

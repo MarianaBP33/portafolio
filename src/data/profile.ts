@@ -6,10 +6,25 @@ export interface Certification {
 }
 
 export interface WorkExperience {
-  position: string
+  role: string
+  company: string
   startDate: string
   endDate: string
   description: string
+  stack: string[]
+}
+
+export const profile = {
+  name: 'Mariana Bojórquez',
+  fullName: 'Mariana Bojórquez Pérez',
+  role: 'Senior Software Engineer',
+  company: 'Virtusa (for Google)',
+  stack: ['java', 'kotlin', 'go', 'python', 'aws', 'oci'],
+  location: 'Guadalajara, MX',
+  locationUrl: 'https://maps.app.goo.gl/fEWCo527CSHqAn1E9',
+  email: 'mariana.bp.33@gmail.com',
+  github: 'https://github.com/MarianaBP33',
+  linkedin: 'https://www.linkedin.com/in/mariana-bojorquez-perez-5556a11b8/',
 }
 
 // Professional experience counted from September 2022
@@ -17,28 +32,36 @@ export const careerStart = new Date(2022, 8, 1)
 
 export const workExperiences: WorkExperience[] = [
   {
-    position: 'Senior Software Engineer at Virtusa',
+    role: 'Senior Software Engineer',
+    company: 'Virtusa',
     startDate: 'June 2026',
     endDate: 'Present',
     description: 'Contractor on a project for Google, working on large-scale backend modernization and services migration. Develop and review Java and Kotlin code to migrate legacy services onto a modern platform.',
+    stack: ['java', 'kotlin'],
   },
   {
-    position: 'Software Engineer at Oracle Mexico',
+    role: 'Software Engineer',
+    company: 'Oracle Mexico',
     startDate: 'October 2024',
     endDate: 'March 2026',
     description: 'Led testing strategy and automation for critical OCI services. Designed automation frameworks in Java, Python, Bash and Go, and led integration, regression and performance testing across distributed cloud services and RESTful APIs.',
+    stack: ['java', 'python', 'go', 'bash', 'oci'],
   },
   {
-    position: 'Junior Software Engineer at EPAM Systems Mexico',
+    role: 'Junior Software Engineer',
+    company: 'EPAM Systems Mexico',
     startDate: 'September 2023',
     endDate: 'September 2024',
     description: 'Built RESTful APIs with Java (Spring Boot, Hibernate) and Node.js (Express, TypeScript) for microservices-based systems, developed React and TypeScript interfaces, and deployed applications on AWS (EC2, S3, Lambda).',
+    stack: ['java', 'spring-boot', 'node.js', 'typescript', 'react', 'aws'],
   },
   {
-    position: 'Software Developer at GE Aerospace',
+    role: 'Software Developer',
+    company: 'GE Aerospace',
     startDate: 'September 2022',
     endDate: 'August 2023',
     description: 'Developed full-stack features with Java (Spring Boot, Hibernate) and Vue.js, owning key features end-to-end from design to deployment, and built cloud-based applications on AWS.',
+    stack: ['java', 'spring-boot', 'hibernate', 'vue.js', 'aws'],
   },
 ]
 

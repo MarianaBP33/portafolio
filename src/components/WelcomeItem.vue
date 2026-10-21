@@ -1,151 +1,146 @@
+<script setup lang="ts">
+import { profile } from '@/data/profile'
+
+const [firstName, lastName] = profile.name.split(' ')
+</script>
+
 <template>
-  <section id="home">
-    <div class="container">
-      <div class="content">
-        <img src="../assets/photos/mifoto.jpg" alt="Mariana Bojórquez Pérez" class="circle-image"/>
-        <div class="item">
-          <h1 class="name">
-            <slot name="name"></slot>
-          </h1>
-          <p class="desc">
-            <slot name="desc"></slot>
-          </p>
-        </div>
-      </div>
-      <nav class="links">
-        <div class="link-item">
-          <a class="hero-link" href="#work-ex"><slot name="link2"></slot></a>
-        </div>
-        <div class="link-item">
-          <a class="hero-link" href="#about-me"><slot name="link1"></slot></a>
-        </div>
-        <div class="link-item">
-          <a class="hero-link" href="https://maps.app.goo.gl/fEWCo527CSHqAn1E9" target="_blank" rel="noopener"><slot name="link3"></slot></a>
-          <svg class="location-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 3 3 10.53v.98l6.84 2.65L12.48 21h.98L21 3z"/></svg>
-        </div>
-      </nav>
+  <section id="top" class="hero">
+    <div class="intro">
+      <p class="prompt" aria-hidden="true">
+        <span class="user">mariana@gdl</span> $ <span class="cmd">whoami --verbose</span><span class="caret"></span>
+      </p>
+      <h1>{{ firstName }}<br />{{ lastName }}</h1>
+      <dl class="output">
+        <dt>role</dt>
+        <dd>{{ profile.role }}</dd>
+        <dt>company</dt>
+        <dd>{{ profile.company }}</dd>
+        <dt>stack</dt>
+        <dd>{{ profile.stack.join(' · ') }}</dd>
+        <dt>location</dt>
+        <dd>
+          <a class="location" :href="profile.locationUrl" target="_blank" rel="noopener">● {{ profile.location }}</a>
+        </dd>
+      </dl>
     </div>
+    <figure class="photo">
+      <img src="../assets/photos/mifoto.jpg" :alt="profile.fullName" width="400" height="444" />
+      <figcaption aria-hidden="true">mariana.jpg&nbsp;&nbsp;33KB</figcaption>
+    </figure>
   </section>
 </template>
 
 <style scoped>
-/* modern hero styles */
-.container{
-  margin-bottom: 4rem;
-  margin-top: 2rem;
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-
-@media (max-width: 768px) {
-  min-height: auto;
-  padding: 1.5rem 1rem;
-}
-}
-.circle-image {
-  width: 150px;
-  height: 160px;
-  border-radius: 50%;
-  margin-top: 20px;
-  margin-left: 20px;
-}
-.content{
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: center;
-  margin-top: 2rem;
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(48px, 9vw, 96px) var(--gutter) 48px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: end;
 }
 
-@media (max-width: 768px) {
-  .content {
-    flex-direction: column;
-    margin-top: 1rem;
-  }
-  .circle-image {
-    margin-left: 0;
-    margin-bottom: 1rem;
-  }
+.prompt {
+  font-size: 14px;
+  color: var(--soft);
+  margin-bottom: 18px;
+  white-space: nowrap;
 }
-
-.links{
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+.user {
+  color: var(--teal);
 }
-.hero-link{
-  color: white;
-  font-weight: 600;
-  border: 1px solid rgba(255,255,255,0.9);
-  padding: 0.5rem 0.8rem;
+.cmd {
+  color: var(--ink);
   display: inline-block;
-  border-radius: 6px;
+  overflow: hidden;
+  vertical-align: bottom;
+  width: 16ch;
+  animation: type 1.2s steps(16) 0.3s both;
 }
-.hero-link:hover{ background: rgba(255,255,255,0.05); }
-.location-icon{
-  width: 1em;
-  height: 1em;
-  margin-left: .5rem;
-  vertical-align: middle;
+.caret {
+  display: inline-block;
+  width: 9px;
+  height: 17px;
+  margin-left: 4px;
+  vertical-align: -3px;
+  background: var(--indigo);
+  box-shadow: 0 0 10px var(--indigo);
+  animation: blink 1.1s steps(1) infinite;
+}
+@keyframes type {
+  from { width: 0; }
+}
+@keyframes blink {
+  50% { opacity: 0; }
 }
 
-@media (max-width: 768px) {
-  .links { gap: 0.4rem; }
-  .hero-link{ padding: 0.4rem 0.5rem; font-size: 0.9rem; }
-  .link-item {
-    margin-top: 0.4rem;
-    padding: 0.2rem 0;
-  }
+h1 {
+  font-size: clamp(40px, 8vw, 84px);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
 }
-.item {
-  margin-top: 0rem;
-  display: flex;
-  flex-direction: column;
+
+.output {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 18px;
+  font-size: 14px;
+}
+dt {
+  color: var(--dim);
+}
+dd {
+  margin: 0;
+}
+.location {
+  color: var(--teal);
+}
+.location:hover {
+  text-decoration: underline;
+}
+
+.photo {
+  margin: 0 0 22px;
+  width: 220px;
+  padding: 6px;
+  border: 1px solid rgba(109, 93, 252, 0.45);
+  background: var(--panel);
+  box-shadow: 0 0 50px -12px var(--indigo);
   position: relative;
 }
-
-.name {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 25%;
+}
+figcaption {
+  position: absolute;
+  left: 6px;
+  bottom: -22px;
+  font-size: 11px;
+  color: var(--dim);
 }
 
-@media (max-width: 768px) {
-  .name {
-    font-size: 1.5rem;
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: 1fr;
+    align-items: start;
   }
-  .desc {
-    font-size: 0.9rem;
+  .photo {
+    order: -1;
+    width: 150px;
   }
-}
-.desc {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 0.4rem;
-  color: #ffffff;
-}
-.link-item{
-  font-size: 1rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-top: 1rem;
-  padding: 2rem;
-}
-
-
-@media (min-width: 1024px) {
-  .item {
-    padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
+  .output {
+    font-size: 13px;
   }
 }
 </style>
