@@ -1,3 +1,10 @@
+export interface Certification {
+  name: string
+  issuer: string
+  year: number
+  details?: string
+}
+
 export interface WorkExperience {
   position: string
   startDate: string
@@ -5,8 +12,8 @@ export interface WorkExperience {
   description: string
 }
 
-// Full-time experience counted from September 2023
-export const careerStart = new Date(2023, 8, 1)
+// Professional experience counted from September 2022
+export const careerStart = new Date(2022, 8, 1)
 
 export const workExperiences: WorkExperience[] = [
   {
@@ -33,11 +40,25 @@ export const workExperiences: WorkExperience[] = [
     endDate: 'August 2023',
     description: 'Developed full-stack features with Java (Spring Boot, Hibernate) and Vue.js, owning key features end-to-end from design to deployment, and built cloud-based applications on AWS.',
   },
+]
+
+export const certifications: Certification[] = [
   {
-    position: "Talent & Change Management Intern at Kellogg's Company",
-    startDate: 'August 2021',
-    endDate: 'January 2022',
-    description: 'Developed and automated Excel macros, reducing data processing time and improving reporting efficiency.',
+    name: 'AWS Certified Cloud Practitioner',
+    issuer: 'Amazon Web Services',
+    year: 2024,
+  },
+  {
+    name: 'Google Cloud Computing Foundations',
+    issuer: 'Google Cloud',
+    year: 2022,
+    details: 'Cloud computing fundamentals; data, ML and AI; infrastructure; networking and security in Google Cloud.',
+  },
+  {
+    name: 'Seeds for the Future Mexico',
+    issuer: 'Huawei',
+    year: 2021,
+    details: 'Selected as one of 40 students nationwide.',
   },
 ]
 

@@ -2,6 +2,7 @@
 import AboutMe from './AboutMe.vue';
 import FooterComponent from './FooterComponent.vue';
 import WorkExperience from './WorkExperience.vue';
+import Certifications from './Certifications.vue';
 import WelcomeItem from './WelcomeItem.vue'
 import { careerStart } from '@/data/profile'
 
@@ -21,6 +22,9 @@ const yearsOfExperience = Math.floor((Date.now() - careerStart.getTime()) / (365
   <WorkExperience>
     <template #heading>Work Experience</template>
   </WorkExperience>
+  <Certifications>
+    <template #heading>Certifications</template>
+  </Certifications>
   <AboutMe>
     <template #heading>About Me</template>
     <template #text>I'm a backend-focused software engineer with over <strong>{{ yearsOfExperience }}</strong> years of experience building and maintaining web applications, primarily in <strong>Java. </strong></template>
