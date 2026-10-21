@@ -14,7 +14,7 @@ import { profile } from '@/data/profile'
       <dt>github</dt>
       <dd><a :href="profile.github" target="_blank" rel="noopener">github.com/MarianaBP33</a></dd>
       <dt>linkedin</dt>
-      <dd><a :href="profile.linkedin" target="_blank" rel="noopener">linkedin.com/in/mariana-bojorquez-perez</a></dd>
+      <dd><a :href="profile.linkedin" target="_blank" rel="noopener">linkedin.com/in/marianabojorquezp</a></dd>
     </dl>
     <p class="credits">© {{ new Date().getFullYear() }} {{ profile.fullName }}</p>
   </footer>

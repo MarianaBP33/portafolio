@@ -24,7 +24,7 @@ export const profile = {
   locationUrl: 'https://maps.app.goo.gl/fEWCo527CSHqAn1E9',
   email: 'mariana.bp.33@gmail.com',
   github: 'https://github.com/MarianaBP33',
-  linkedin: 'https://www.linkedin.com/in/mariana-bojorquez-perez-5556a11b8/',
+  linkedin: 'https://www.linkedin.com/in/marianabojorquezp',
 }
 
 // Professional experience counted from September 2022
@@ -45,7 +45,7 @@ export const workExperiences: WorkExperience[] = [
     startDate: 'October 2024',
     endDate: 'March 2026',
     description: 'Led testing strategy and automation for critical OCI services. Designed automation frameworks in Java, Python, Bash and Go, and led integration, regression and performance testing across distributed cloud services and RESTful APIs.',
-    stack: ['java', 'python', 'go', 'bash', 'oci'],
+    stack: ['java', 'python', 'golang','qa','sql','docker'],
   },
   {
     role: 'Junior Software Engineer',
@@ -53,7 +53,7 @@ export const workExperiences: WorkExperience[] = [
     startDate: 'September 2023',
     endDate: 'September 2024',
     description: 'Built RESTful APIs with Java (Spring Boot, Hibernate) and Node.js (Express, TypeScript) for microservices-based systems, developed React and TypeScript interfaces, and deployed applications on AWS (EC2, S3, Lambda).',
-    stack: ['java', 'spring-boot', 'node.js', 'typescript', 'react', 'aws'],
+    stack: ['java', 'spring-boot', 'node.js', 'typescript', 'javascript', 'react', 'aws','sql'],
   },
   {
     role: 'Software Developer',
@@ -61,7 +61,7 @@ export const workExperiences: WorkExperience[] = [
     startDate: 'September 2022',
     endDate: 'August 2023',
     description: 'Developed full-stack features with Java (Spring Boot, Hibernate) and Vue.js, owning key features end-to-end from design to deployment, and built cloud-based applications on AWS.',
-    stack: ['java', 'spring-boot', 'hibernate', 'vue.js', 'aws'],
+    stack: ['java', 'spring-boot', 'hibernate', 'javascript', 'typescript', 'aws'],
   },
 ]
 
@@ -86,5 +86,5 @@ export const certifications: Certification[] = [
 ]
 
 export const tools = [
-  'Java', 'Python', 'Go', 'AWS', 'Docker', 'Spring Boot', 'Spring Security', 'Typescript', 'Javascript', 'Terraform', 'Git', 'MySQL', 'MongoDB', 'CI/CD', 'Vuejs', 'HTML & CSS', 'Mockito', 'JUnit', 'Microsoft Excel'
+  'Java', 'Python', 'Go', 'AWS', 'Docker', 'Spring Boot', 'Spring Security', 'Typescript', 'Javascript', 'Terraform', 'Git', 'MySQL', 'MongoDB', 'CI/CD', 'Mockito', 'JUnit'
 ]
