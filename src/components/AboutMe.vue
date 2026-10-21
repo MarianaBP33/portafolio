@@ -1,19 +1,19 @@
 <template>
     <section id="about-me">
         <div class="content">
-            <h1>
+            <h2>
                 <slot name="heading"></slot>
-            </h1>
+            </h2>
             <div class="info">
                 <div class="text-section">
-                    <h4>
+                    <div class="bio">
                         <p><slot name="text"></slot></p>
                         <p><slot name="Moretext"></slot></p>
                         <p><slot name="Moretext2"></slot></p>
-                    </h4>
+                    </div>
                 </div>
                 <div class="carousel-section">
-                    <img src="../assets/photos/micara.jpg" alt="About me">
+                    <img src="../assets/photos/micara.jpg" alt="Mariana Bojórquez Pérez">
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@ img{
 .text-section, .carousel-section {
   width: 55%; /* Adjust this value as needed */
 }
-h1{
+h2{
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 1rem;
@@ -81,15 +81,15 @@ h1{
     max-height: none;
     margin-top: 0.5rem;
   }
-  h1 {
+  h2 {
     font-size: 1.75rem;
   }
-  h4 {
+  .bio p {
     font-size: 1rem;
   }
 }
 
-h4{
+.bio p{
     font-size: 1.2rem;
     color: #fff;
 }

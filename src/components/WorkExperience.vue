@@ -1,10 +1,10 @@
 <template>
     <section id="work-ex">
         <div class="content">
-            <div style="justify-content: center; align-items: center; display: flex;">
-                <h1>
+            <div class="heading">
+                <h2>
                     <slot name="heading"></slot>
-                </h1>
+                </h2>
             </div>
             <div class="info">
                 <div class="work-experience-component">
@@ -85,11 +85,6 @@
   padding-left: 40px;
 }
 
-img {
-    width: 100px;
-    height: 100px;
-}
-
 .info {
    display: flex;
   align-items: center;
@@ -98,17 +93,17 @@ img {
     
 }
 
-h1 {
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
     color: #fff;
-}
-
-h4 {
-    font-size: 1.2rem;
-    color: white;
-    font-weight: 600;
 }
 
 @media (max-width: 768px) {
@@ -160,41 +155,5 @@ h4 {
 }
 </style>
 <script setup lang="ts">
-interface WorkExperience {
-    position: string;
-    startDate: string;
-    endDate: string;
-    description: string;
-}
-
-const workExperiences: WorkExperience[] = [
-    {
-        position: 'Software Developer at Oracle Mexico',
-        startDate: 'October 2024',
-        endDate: 'Present',
-        description: 'Backend Engineer for Cloud services, specializing in test automation and QA engineering.',
-    },
-    {
-        position: 'Software Engineer at EPAM Systems Mexico',
-        startDate: 'September 2023',
-        endDate: 'October 2024',
-        description: 'Designed and developed RESTful APIs using Spring Boot. Utilized AWS services to deploy and manage cloud-based microservices.',
-    },
-    {
-        position: 'Software Developer Intern at GE Aerospace',
-        startDate: 'September 2022',
-        endDate: 'July 2023',
-        description: 'Full-stack developer; implemented feature enhancements that improved system performance and user experience.',
-    },
-    {
-        position: "Talent & Change Management Intern at Kellogg's Company",
-        startDate: 'August 2021',
-        endDate: 'January 2022',
-        description: 'Developed and automated Excel macros, reducing data processing time and improving reporting efficiency.',
-    },
-]
-
-const tools = [
-    'Java', 'Python', 'Go', 'AWS', 'Docker', 'Spring Boot', 'Spring Security', 'Typescript', 'Javascript', 'Terraform', 'Git', 'MySQL', 'MongoDB', 'CI/CD', 'Vuejs', 'HTML & CSS', 'Mockito', 'JUnit', 'Microsoft Excel'
-]
+import { tools, workExperiences } from '@/data/profile'
 </script>

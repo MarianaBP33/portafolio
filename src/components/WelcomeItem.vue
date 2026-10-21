@@ -1,39 +1,29 @@
 <template>
   <section id="home">
     <div class="container">
-      <div class="welcome">
-        <h3>
-          <slot name="heading"></slot>
-        </h3>
-      </div>
       <div class="content">
         <img src="../assets/photos/mifoto.jpg" alt="Mariana Bojórquez Pérez" class="circle-image"/>
         <div class="item">
-          <h4>
-            <slot name="subheading"></slot>
-          </h4>
-          <h3>
+          <h1 class="name">
             <slot name="name"></slot>
-          </h3>
-          <div>
-            <h2>
-              <slot name="desc"></slot>
-            </h2>
-          </div>      
+          </h1>
+          <p class="desc">
+            <slot name="desc"></slot>
+          </p>
         </div>
       </div>
-      <div class="links">
-        <h5>
+      <nav class="links">
+        <div class="link-item">
           <a class="hero-link" href="#work-ex"><slot name="link2"></slot></a>
-        </h5>
-        <h5>
+        </div>
+        <div class="link-item">
           <a class="hero-link" href="#about-me"><slot name="link1"></slot></a>
-        </h5>
-        <h5>
+        </div>
+        <div class="link-item">
           <a class="hero-link" href="https://maps.app.goo.gl/fEWCo527CSHqAn1E9" target="_blank" rel="noopener"><slot name="link3"></slot></a>
           <svg class="location-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 3 3 10.53v.98l6.84 2.65L12.48 21h.98L21 3z"/></svg>
-        </h5>
-      </div>
+        </div>
+      </nav>
     </div>
   </section>
 </template>
@@ -110,7 +100,7 @@
 @media (max-width: 768px) {
   .links { gap: 0.4rem; }
   .hero-link{ padding: 0.4rem 0.5rem; font-size: 0.9rem; }
-  h5 {
+  .link-item {
     margin-top: 0.4rem;
     padding: 0.2rem 0;
   }
@@ -122,7 +112,7 @@
   position: relative;
 }
 
-h3 {
+.name {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
@@ -131,71 +121,31 @@ h3 {
 }
 
 @media (max-width: 768px) {
-  h3 {
+  .name {
     font-size: 1.5rem;
   }
-  h4{
-    font-size: 1rem;
-  }
-  h2{
+  .desc {
     font-size: 0.9rem;
   }
 }
-h4{
-  font-size: 2rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-top: 4rem;
-  
-}
-h2 {
+.desc {
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 0.4rem;
   color: #ffffff;
 }
-h5{
+.link-item{
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
   margin-top: 1rem;
   padding: 2rem;
 }
-.welcome{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 
 @media (min-width: 1024px) {
   .item {
-    margin-top: 0;
     padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
-  }
-  
-  .item:before {
-    content: ' ';
-    position: absolute;
-    left: 0;
-    bottom: calc(50% + 25px);
-    height: calc(50% - 25px);
-  }
-  
-  .item:after {
-    content: ' ';
-    position: absolute;
-    left: 0;
-    top: calc(50% + 25px);
-    height: calc(50% - 25px);
-  }
-  
-  .item:first-of-type:before {
-    display: none;
-  }
-  
-  .item:last-of-type:after {
-    display: none;
   }
 }
 </style>
