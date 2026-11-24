@@ -36,7 +36,7 @@ export const workExperiences: WorkExperience[] = [
     company: 'Virtusa',
     startDate: 'June 2026',
     endDate: 'Present',
-    description: 'Contractor on a project for US Company, working on large-scale backend modernization and services migration. Develop and review Java and Kotlin code to migrate legacy services onto a modern platform.',
+    description: 'Contractor on a project for a US company, working on large-scale backend modernization and services migration. Develop and review Java and Kotlin code to migrate legacy services onto a modern platform.',
     stack: ['java', 'kotlin'],
   },
   {
