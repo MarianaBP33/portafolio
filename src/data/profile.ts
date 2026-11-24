@@ -18,7 +18,7 @@ export const profile = {
   name: 'Mariana Bojórquez',
   fullName: 'Mariana Bojórquez Pérez',
   role: 'Senior Software Engineer',
-  company: 'Virtusa (for Google)',
+  company: 'Virtusa',
   stack: ['java', 'kotlin', 'docker', 'python', 'aws', 'qa'],
   location: 'Guadalajara, MX',
   locationUrl: 'https://maps.app.goo.gl/fEWCo527CSHqAn1E9',
@@ -36,7 +36,7 @@ export const workExperiences: WorkExperience[] = [
     company: 'Virtusa',
     startDate: 'June 2026',
     endDate: 'Present',
-    description: 'Contractor on a project for Google, working on large-scale backend modernization and services migration. Develop and review Java and Kotlin code to migrate legacy services onto a modern platform.',
+    description: 'Contractor on a project for US Company, working on large-scale backend modernization and services migration. Develop and review Java and Kotlin code to migrate legacy services onto a modern platform.',
     stack: ['java', 'kotlin'],
   },
   {
